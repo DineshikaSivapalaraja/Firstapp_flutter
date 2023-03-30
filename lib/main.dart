@@ -1,3 +1,4 @@
+import 'package:firstapp_flutter/pages/BottomNavigationPage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -65,6 +66,10 @@ class MyHomePage extends StatefulWidget {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            TextButton(onPressed: (){
+              Navigator.push(context,
+                  MaterialPageRoute(builder:(context) => BottomNavigationPage()));
+            }, child: const Text("Navigate to Next")),
           ],
         ),
       ),
