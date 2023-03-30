@@ -1,8 +1,42 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  //runApp(const MyApp());
+  //runApp(); is expecting widget that we need to show
+  //runApp(const FreshText());
+  runApp(Column(
+    children: [
+    const FreshText(),
+    const FreshText(),
+    const FreshText(), 
+     Text(
+      "Demo widget",
+       textDirection: TextDirection.ltr,
+    ),
+      const FreshText(),
+    ],
+  ));
 }
+
+class FreshText extends StatelessWidget {
+  const FreshText({
+    super.key,
+  }); //Key based constructor
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+        """
+         Hi friends! \n Welcome to my Demo application through flutter""",
+         textDirection: TextDirection.ltr,
+        //Text(
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(
+              fontSize: 40, fontWeight: FontWeight.bold, color: Colors.blue),
+    );
+  }
+}   //it's a separate widget
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -22,9 +56,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.yellow,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Dins Flutter Demo Home Page'),
     );
   }
 }
@@ -96,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'Dineshi, You have pushed the button this many times:',
             ),
             Text(
               '$_counter',
